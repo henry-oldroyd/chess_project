@@ -1,0 +1,4 @@
+2022-08-05 15:03:03,966 - server - INFO - this logger named server created
+2022-08-05 15:03:03,970 - server - INFO - Beginning execution of function:  run_app  with arguments  ((), {})
+2022-08-05 15:03:05,688 - server - INFO - Beginning execution of function:  index  with arguments  ((), {})
+2022-08-05 15:03:05,700 - server - INFO -  function  index  finished and returned:   <!DOCTYPE html> <html lang="en"> <head>     <meta charset="UTF-8">     <meta http-equiv="X-UA-Compatible" content="IE=edge">     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 

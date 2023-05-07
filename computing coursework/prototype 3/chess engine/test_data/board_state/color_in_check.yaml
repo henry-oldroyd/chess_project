@@ -1,0 +1,120 @@
+test1:
+  pieces_matrix: [
+    [BR,   BK,   BB,   BK,   BQ,   BB,   BK,   BR  ],
+    [BP,   BP,   BP,   BP,   BP,   BP,   BP,   BP  ],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [WP,   WP,   WP,   WP,   WP,   WP,   WP,   WP  ],
+    [WR,   WK,   WB,   WK,   WQ,   WB,   WK,   WR  ]
+  ]
+  white_in_check: false
+  black_in_check: false
+test2:
+  pieces_matrix: [
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, WK, WQ, BK],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+
+  ]
+  white_in_check: false
+  black_in_check: true
+
+test3:
+  pieces_matrix: [
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, BQ],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, WP, WP, null, null, null],
+    [null, null, null, WB, WK, WB, null, null],
+  ]
+  white_in_check: true
+  black_in_check: false
+  
+test4:
+  pieces_matrix: [
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, WK, null, BK],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, WR]
+  ]
+  white_in_check: false
+  black_in_check: true
+test5:
+  pieces_matrix: [
+    [null, null, null, BK, null, null, null, null],
+    [null, null, null, WP, null, null, null, null],
+    [null, null, null, WK, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+  ]
+  white_in_check: false
+  black_in_check: false
+test6:
+  pieces_matrix: [
+    [null, null, BK, null, null, null, null, null],
+    [null, null, null, WP, null, null, null, null],
+    [null, null, null, WK, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+  ]
+  white_in_check: false
+  black_in_check: true
+test7:
+  pieces_matrix: [
+    [null, null, null, null, BK, null, null, null],
+    [null, null, null, WP, null, null, null, null],
+    [null, null, null, WK, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+  ]
+  white_in_check: false
+  black_in_check: true
+test8:
+  pieces_matrix: [
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, WP, BK, null, null, null],
+    [null, null, null, WK, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+  ]
+  white_in_check: true
+  black_in_check: true
+test9:
+  pieces_matrix: [
+    [null, null, null, null, null, null, null, null],
+    [null, null, BK, WP, null, null, null, null],
+    [null, null, null, WK, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+  ]
+  white_in_check: true
+  black_in_check: true

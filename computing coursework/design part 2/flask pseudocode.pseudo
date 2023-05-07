@@ -1,0 +1,110 @@
+FUNCTION generate_game_update_data()
+    game = get_game_in_session()
+
+    next_to_go = game.board_state.next_to_go
+    difficulty = game.difficulty
+
+    legal_moves = list(game.board_state.generate_legal_moves())
+    legal_moves_serialised = serialize_legal_moves(legal_moves)
+
+    pieces_matrix = game.board_state.pieces_matrix
+    pieces_matrix_serialised = serialize_pieces_matrix(pieces_matrix)
+
+    next_to_go_in_check = game.board_state.color_in_check()
+
+    over, winning_player, victory_classification = game.check_game_over()
+
+    game_over_data =  {
+        "over": over,
+        "winning_player": winning_player,
+        "victory_classification": victory_classification,
+    }
+
+    pieces_missing = {}
+    FOR EACH color IN ("B", "W")
+        pieces_missing[color] = list(map(
+            serialize_piece,
+            game.board_state.generate_pieces_taken_by_color(color)
+        ))
+    END FOR
+
+    move_history = game.move_history_output
+
+    payload = {
+        "difficulty": difficulty,
+        "next_to_go":  next_to_go,
+        "game_over_data":  game_over_data,
+        "legal_moves":  legal_moves_serialised,
+        "pieces_matrix": pieces_matrix_serialised,
+        "check": next_to_go_in_check,
+        "pieces_taken": pieces_missing,
+        "move_history": move_history,
+    }
+
+    RETURN payload
+END FUNCTION
+
+
+@bind_socket_handler("get_update")
+FUNCTION get_update()
+    result = generate_game_update_data()
+    RETURN result
+END FUNCTION
+
+
+@bind_socket_handler("implement_computer_move")
+FUNCTION implement_computer_move()
+    game = get_game_in_session()
+    assert game.board_state.next_to_go == "B"
+    assert not game.board_state.is_game_over_for_next_to_go()[0]
+
+    move_description = game.implement_computer_move_and_report()
+
+    set_game_in_session(game)
+
+    outgoing_payload = generate_game_update_data()
+    outgoing_payload["computer_move_description"] = move_description
+
+    RETURN outgoing_payload
+END FUNCTION
+
+
+@bind_socket_handler("reset_game", respond=False)
+FUNCTION reset_game()
+    old_game = get_game_in_session()
+    difficulty = old_game.difficulty
+    new_game = Game_Website(difficulty=difficulty)
+    
+    set_game_in_session(new_game)
+END FUNCTION
+
+
+@bind_socket_handler("implement_user_move")
+FUNCTION implement_user_move(incoming_payload)
+    game = get_game_in_session()
+
+    assert game.board_state.next_to_go == "W"
+    assert not game.board_state.is_game_over_for_next_to_go()[0]
+
+    user_move = tuple(
+        deserialize_move(
+            incoming_payload["user_move"]
+        )
+    )
+    game.implement_user_move(user_move)
+
+    set_game_in_session(game)
+
+    RETURN generate_game_update_data()
+END FUNCTION
+
+
+@bind_socket_handler("change_difficulty", respond=False)
+FUNCTION change_difficulty(incoming_payload)
+    game = get_game_in_session()
+
+    new_difficulty = incoming_payload["new_difficulty"]
+    game.difficulty = new_difficulty
+    
+    set_game_in_session(game)
+END FUNCTION

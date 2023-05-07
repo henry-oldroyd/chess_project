@@ -1,0 +1,10 @@
+Move_counter,B_score,from_square,to_square,W_score
+1,-50,B1,C3,50
+2,0,B8,C6,0
+3,-50,G1,F3,50
+4,0,G8,F6,0
+5,-40,D2,D4,40
+6,0,D7,D5,0
+7,-20,C1,E3,20
+8,0,C8,E6,0
+9,-10,C3,E4,10

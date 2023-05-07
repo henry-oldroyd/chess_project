@@ -1,0 +1,98 @@
+test1:
+  next_to_go: W
+  pieces_matrix: [
+    [BR,   BK,   BB,   BK,   BQ,   BB,   BK,   BR  ],
+    [BP,   BP,   BP,   BP,   BP,   BP,   BP,   BP  ],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [WP,   WP,   WP,   WP,   WP,   WP,   WP,   WP  ],
+    [WR,   WK,   WB,   WK,   WQ,   WB,   WK,   WR  ]
+  ]
+  expected_over: false
+  expected_outcome: null
+test2:
+  next_to_go: B
+  pieces_matrix: [
+    [null, null, null, BK,   null, null, null, null],
+    [null, null, null, WP,   null, null, null, null],
+    [null, null, null, WK,   null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+  ]
+  expected_over: true
+  expected_outcome: null
+test3:
+  next_to_go: B
+  pieces_matrix: [
+    [WR,   null, null, null, null, null, BK,   null],
+    [null, WR,   null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, WK  ],
+  ]
+  expected_over: true
+  expected_outcome: W
+test4:
+  next_to_go: B
+  pieces_matrix: [
+    [null, null, null, BK,   null, null, null, null],
+    [null, null, null, WP,   null, null, null, null],
+    [null, null, WP,   WK,   null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+  ]
+  expected_over: true
+  expected_outcome: null
+test5:
+  next_to_go: B
+  pieces_matrix: [
+    [null, null, null, BK,   null, null, null, null],
+    [null, null, WP,   WP,   null, null, null, null],
+    [null, null, null, WK,   null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+  ]
+  expected_over: true
+  expected_outcome: W
+test6:
+  next_to_go: W
+  pieces_matrix: [
+    [BR,   null, null, null, null, BR,   BK,   null],
+    [BP,   null, null, null, null, BP,   BP,   null],
+    [null, BP,   null, null, null, null, null, null],
+    [null, null, BQ,   null, null, null, null, null],
+    [null, null, null, null, null, null, null, WQ  ],
+    [null, null, null, null, null, null, WP,   null],
+    [WP,   null, null, null, null, WP,   WB,   null],
+    [WR,   null, null, null, null, null, null, WR  ],
+  ]
+  expected_over: false
+  expected_outcome: null
+test7:
+  next_to_go: B
+  pieces_matrix: [
+    [BR,   null, null, null, null, BR,   BK,   WQ  ],
+    [BP,   null, null, null, null, BP,   BP,   null],
+    [null, BP,   null, null, null, null, null, null],
+    [null, null, BQ,   null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, WP,   null],
+    [WP,   null, null, null, null, WP,   WB,   null],
+    [WR,   null, null, null, null, null, null, WR  ],
+  ]
+  expected_over: true
+  expected_outcome: W

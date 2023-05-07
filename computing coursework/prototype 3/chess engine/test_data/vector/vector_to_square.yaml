@@ -1,0 +1,15 @@
+test1:
+  vector: [0, 0]
+  expected: A1
+test2:
+  vector: [5, 7]
+  expected: F8
+test3:
+  vector: [6, 2]
+  expected: G3
+test4:
+  vector: [0, 6]
+  expected: A7
+test5:
+  vector: [7, 7]
+  expected: H8

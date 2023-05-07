@@ -1,0 +1,20 @@
+ASYNC FUNCTION external_get_update()
+    PASS
+END FUNCTION
+
+ASYNC FUNCTION external_implement_computer_move_and_update()
+    PASS
+END FUNCTION
+
+ASYNC FUNCTION external_reset_game()
+    PASS
+END FUNCTION
+
+ASYNC FUNCTION external_implement_user_move_and_update(from_vector, to_vector)()
+    PASS
+END FUNCTION
+
+ASYNC FUNCTION external_change_difficulty(new_difficulty)
+    PASS
+END FUNCTION
+

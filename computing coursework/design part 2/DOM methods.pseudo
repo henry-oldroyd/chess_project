@@ -1,0 +1,82 @@
+FUNCTION create_board_widget()
+    PASS    
+END FUNCTION
+
+FUNCTION get_square_at_vector(v)
+    PASS
+END FUNCTION
+
+FUNCTION add_pieces(board)
+    PASS
+END FUNCTION
+
+FUNCTION add_highlighting(board)
+    PASS
+END FUNCTION
+
+FUNCTION clear_board()
+    PASS
+END FUNCTION
+
+FUNCTION update_main_title(board)
+    PASS
+END FUNCTION
+
+
+
+FUNCTION update_pieces_taken(board)
+    PASS
+END FUNCTION
+
+FUNCTION set_selected_difficulty(board)
+    PASS
+END FUNCTION
+
+
+FUNCTION set_widget_move_history(board)
+    PASS
+END FUNCTION
+
+
+FUNCTION update_board_widget(board)
+    update_main_title(board)
+    add_pieces(board)
+    add_highlighting(board)
+    set_selected_difficulty(board)
+    update_pieces_taken(board)
+    set_widget_move_history(board)
+END FUNCTION
+
+
+
+
+create_board_widget()
+
+
+let board = new Chess_Board(
+    update_board_widget,
+    update_main_title
+)
+
+
+FUNCTION handle_radio_button_click(radio_button)
+    PASS
+END FUNCTION
+
+
+FUNCTION handle_square_click(i, j)
+    board.handle_square_click([i, j])
+    update_board_widget(board)
+END FUNCTION
+
+
+FUNCTION reset_button_click()
+    board.reset_game()
+END FUNCTION
+
+FUNCTION concede_button_click()
+    // update_main_title(null, "You Conceded The Game")
+    board.concede_game()
+END FUNCTION
+
+

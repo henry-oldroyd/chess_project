@@ -1,0 +1,99 @@
+
+class Chess_Board {
+
+    constructor(update_board_widget_function, update_main_title_widget) {
+        this.update_board_widget = function () {
+            update_board_widget_function(this)
+        }
+        this.update_main_title_widget = function (msg) {
+            update_board_widget_function(this, msg)
+        }
+
+        // this.update_from_server_data(INITIAL_GAME_DATA)
+        this.direct_server_grand_update()
+
+    };
+
+    async initialize_from_reloaded_game() {
+
+    }
+
+    update_from_server_data(server_data, user_input_disabled=false) {
+        this.possible_to_vectors = [];
+        this.selected_from_vector = null;
+        this.user_input_disabled = user_input_disabled
+        
+        // 2d array of 2 element arrays containing characters
+        this.pieces_matrix = server_data.pieces_matrix;
+        // array of moves, each move is an array of 2 vectors, each vector is an array of 2 intigers
+        this.legal_moves = server_data.legal_moves;
+        // string
+        this.next_to_go = server_data.next_to_go;
+        // boolean
+        this.check = server_data.check;
+        this.just_reset = false
+
+        // console.log("server_data")
+        // console.log(server_data)
+
+        // console.log("server_data.game_over_data")
+        // console.log(server_data.game_over_data)
+
+        // boolean
+        this.game_over = server_data.game_over_data.over;
+        delete server_data.game_over_data.over;
+        // record of string data
+        this.over_data = server_data.game_over_data;
+
+        // array containing 2 array that each contain a piece. A piece is represented as an array containing 2 characters
+        this.pieces_taken = server_data.pieces_taken;
+        // this is an array of strings
+        this.move_history = server_data.move_history;
+        // this is a string
+        this.difficulty = server_data.difficulty;
+
+        this.update_board_widget();
+    }
+
+    async make_user_move(from_vector, to_vector) {
+
+    }
+
+
+    async make_computer_move() {   
+
+    }
+
+    
+    async user_move_and_computer_move_cycle(from_vector, to_vector) {
+
+    }
+
+    reset_game() {
+
+    }
+
+
+    concede_game() {
+
+    }
+
+
+    handle_game_over() {
+
+    }
+    
+
+    handle_square_click(vector) {
+
+    }
+
+    change_difficulty(new_difficulty) {
+
+    }
+
+    get_highlighted_squares() {
+
+    }
+}
+

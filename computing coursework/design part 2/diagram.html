@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chess Game Menu Flow Diagram</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js"></script>
+    <style>
+        .mermaid {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mermaid">
+        graph TD;
+        A((Start)) --> B{User Selects Piece};
+        B --> C[Highlight Selected Piece];
+        C --> D[Highlight Legal Moves];
+        D --> E{User Selects Move Square};
+        E --> F{Is Move Legal?};
+        F -->|Yes| G[Move Piece];
+        G --> H[Update Board];
+        H --> I{Is Game Over?};
+        I -->|Yes| J[Display Result];
+        J --> K((End));
+        I -->|No| L[Computer Makes Move];
+        L --> B;
+        F -->|No| B;
+    </div>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            flowchart: {
+                useMaxWidth: false,
+                htmlLabels: true
+            }
+        });
+    </script>
+</body>
+
+</html>

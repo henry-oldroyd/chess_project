@@ -1,0 +1,68 @@
+test1:
+  pieces_matrix: [
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [BP,   null, BP,   null, null, null, null, null],
+    [null, WP,   null, null, null, null, null, null]
+  ]
+  color: W
+  pieces_and_squares: [
+    [WP, B1]
+  ]
+test2:
+  pieces_matrix: [
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [BP,   null, BP,   null, null, null, null, null],
+    [null, WP,   null, null, null, null, null, null]
+  ]
+  color: B
+  pieces_and_squares: [
+    [BP, A2],
+    [BP, C2]
+  ]
+
+test3:
+  pieces_matrix: [
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, BP,   null, null, null, null],
+    [null, null, null, null, BR,   null, null, null],
+    [null, BR,   null, BR,   null, null, WB,   null],
+    [null, null, BP,   null, null, null, BP,   null],
+    [null, WR,   null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null]
+  ]
+  color: W
+  pieces_and_squares: [
+    [WR, B2],
+    [WB, G4]
+  ]
+test4:
+  pieces_matrix: [
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, BP,   null, null, null, null],
+    [null, null, null, null, BR,   null, null, null],
+    [null, BR,   null, BR,   null, null, WB,   null],
+    [null, null, BP,   null, null, null, BP,   null],
+    [null, WR,   null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null]
+  ]
+  color: B
+  pieces_and_squares: [
+    [BR, B4],
+    [BP, C3],
+    [BR, D4],
+    [BP, D6],
+    [BP, G3],
+    [BR, E5]
+  ]

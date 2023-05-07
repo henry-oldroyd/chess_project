@@ -1,0 +1,118 @@
+test1:
+  pieces_matrix: [
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [BP,   null, BP,   null, null, null, null, null],
+    [null, WP,   null, null, null, null, null, null]
+  ]
+  square: B1
+  expected_piece_symbol: WP
+  expected_move_squares: [
+    A2, C2, B2, B3
+  ]
+test2:
+  pieces_matrix: [
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, BP,   null, null, null, null],
+    [null, null, null, null, BR,   null, null, null],
+    [null, BR,   null, BQ,   null, null, WB,   null],
+    [null, null, BP,   null, null, null, BP,   null],
+    [null, WR,   null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null]
+  ]
+  square: D4
+  expected_piece_symbol: BQ
+  expected_move_squares: [
+    D5,
+    E4, F4, G4,
+    E3, F2, G1,
+    D3, D2, D1,
+    C4,
+    C5, B6, A7
+  ]
+test3:
+  pieces_matrix: [
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, BP,   null, null, null, null],
+    [null, null, null, null, BR,   null, null, null],
+    [null, BR,   null, BR,   null, null, WB,   null],
+    [null, null, BP,   null, null, null, BP,   null],
+    [null, WR,   null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null]
+  ]
+  square: D4
+  expected_piece_symbol: BR
+  expected_move_squares: [
+    D5,
+    E4, F4, G4,
+    D3, D2, D1,
+    C4,
+  ]
+test4:
+  pieces_matrix: [
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, BP, null, null, null, null],
+    [null, null, WP, null, WP, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null]
+  ]
+  square: D7
+  expected_piece_symbol: BP
+  expected_move_squares: [
+    D6, D5,
+    C6, E6
+  ]
+test5:
+  pieces_matrix: [
+    [null, null, null, BK, null, null, null, null],
+    [null, null, null, WP, null, null, null, null],
+    [null, null, null, WK, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+  ]
+  square: D8
+  expected_piece_symbol: BK
+  expected_move_squares: [
+    C7, D7, E7,
+    C8, E8
+  ]
+test6:
+  pieces_matrix: [
+    [BR,   BK,   BB,   BK,   BQ,   BB,   BK,   BR  ],
+    [BP,   BP,   BP,   BP,   BP,   BP,   BP,   BP  ],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [WP,   WP,   WP,   WP,   WP,   WP,   WP,   WP  ],
+    [WR,   WN,   WB,   WK,   WQ,   WB,   WN,   WR  ]
+  ]
+  square: B1
+  expected_piece_symbol: WN
+  expected_move_squares: [A3, C3]
+test7:
+  pieces_matrix: [
+    [BR,   BN,   BB,   BK,   BQ,   BB,   BN,   BR  ],
+    [BP,   BP,   BP,   BP,   BP,   BP,   BP,   BP  ],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [WP,   WP,   WP,   WP,   WP,   WP,   WP,   WP  ],
+    [WR,   WN,   WB,   WK,   WQ,   WB,   WN,   WR  ]
+  ]
+  square: G1
+  expected_piece_symbol: WN
+  expected_move_squares: [F3, H3]

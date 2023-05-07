@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Game</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"
+        integrity="sha512-9mpsATI0KClwt+xVZfbcf2lJ8IFBAwsubJ6mI3rtULwyM3fBmQFzj0It4tGqxLOGQwGfJdk/G+fANnxfq9/cew=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+        integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+    <!-- <script type="application/json" src="{{  url_for('static', filename='initial_game_data.json')  }}"></script> -->
+    <script type="text/javascript" src="{{  url_for('static', filename='initial_game_data.js')  }}"></script>
+
+    <script type="text/javascript" src="{{  url_for('static', filename='vector.js')  }}"></script>
+    <script type="text/javascript" src="{{  url_for('static', filename='chess_class.js')  }}"></script>
+
+
+    <link rel="stylesheet" href="{{  url_for('static', filename='style.css')  }}">
+    <link rel="shortcut icon" href="{{  url_for('static', filename='favicon.ico')  }}" type="image/x-icon">
+
+</head>
+<body>
+<div class="centered">
+
+
+        <h1 id="top_title"></h1>
+        <!-- <span class="spacer" style="height: 1vmin;"></span> -->
+        <span class="spacer"></span>
+        <div id="board"></div>
+        
+        <!-- <span class="spacer" style="height: 1vmin;"></span> -->
+        <span class="spacer"></span>
+        <div class="option_button_container">
+            <!-- <button class="option_button" id="concede_button">Concede Game</button> -->
+            <button class="option_button" id="concede_button">Concede</button>
+            <!-- <button class="option_button" id="restart_button">Restart Game</button> -->
+            <button class="option_button" id="restart_button">Restart</button>
+        </div>
+
+        <!-- <div class="spacer"></div> -->
+        <span class="spacer"></span>
+        <span class="spacer"></span>
+
+        <div class="difficulty_form">
+            <h1>Change Difficulty: (AI thinking time)</h1>
+            <!-- <p>Change Difficulty:</p> -->
+            <form id="difficulty_form">
+                <label>
+                    <input type="radio" name="difficulty" value="really_easy" onclick="handle_radio_button_click(this)">
+                    Trivial (1 sec)
+                </label>
+                <label>
+                    <input type="radio" name="difficulty" value="easy" onclick="handle_radio_button_click(this)">
+                    Easy (2 sec)
+                </label>
+                <label>
+                    <input type="radio" name="difficulty" value="medium" onclick="handle_radio_button_click(this)">
+                    Medium (5 sec)
+                </label>
+
+                <br>
+
+                <label>
+                    <input type="radio" name="difficulty" value="hard" onclick="handle_radio_button_click(this)">
+                    Hard (10 sec)
+                </label>
+                <label>
+                    <input type="radio" name="difficulty" value="really_hard" onclick="handle_radio_button_click(this)">
+                    Challenge (15 sec)
+                </label>
+                <label>
+                    <input type="radio" name="difficulty" value="extreme" onclick="handle_radio_button_click(this)">
+                    Extreme (30 sec)
+                </label>
+                
+                <br>
+
+                <label>
+                    <input type="radio" name="difficulty" value="legendary" onclick="handle_radio_button_click(this)">
+                    Legendary (60 sec)
+                </label>
+            </form>
+        </div>
+
+        <!-- <div class="spacer"></div> -->
+        <span class="spacer"></span>
+        <span class="spacer"></span>
+
+        <div class="pieces_taken_table">
+            <h1>Pieces Taken:</h1>
+            <table>
+                <tr>
+                    <td>White Pieces Taken</td>
+                    <td>Black Pieces Taken</td>
+                </tr>
+                <tr>
+                    <th id="num_pieces_taken_white"></th>
+                    <th id="num_pieces_taken_black"></th>
+                </tr>
+                <tr>
+                    <th id="which_pieces_taken_white">-</th>
+                    <th id="which_pieces_taken_black">-</th>
+                </tr>
+            </table>
+        </div>
+
+        <!-- <div class="spacer"></div> -->
+        <span class="spacer"></span>
+        <span class="spacer"></span>
+
+        <div class="previous_moves_table">
+            <h1>Moves History:</h1>
+            <table id="pieces_taken_table_table_tag">
+
+                <tr>
+                    <td>
+                        White previous moves:
+                    </td>
+                    <td>
+                        Black previous moves:
+                    </td>
+                </tr>
+        
+                <!-- <tr>
+                    <td>
+                        white move
+                    </td>
+                    <td>
+                        black move
+                    </td>
+                </tr> -->
+
+            </table>
+        </div>
+        <span class="spacer"></span>
+        <span class="spacer"></span>
+
+
+
+</div>
+<script type="text/javascript" src="{{  url_for('static', filename='main.js')  }}"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+test1:
+  piece_type: 'N'
+  square: E4
+  expected_move_squares: [
+    D2, F2, D6, F6, C5, C3, G5, G3
+  ]
+test2:
+  piece_type: Q
+  square: C3
+  expected_move_squares: [
+    A1, B2, D4, E5, F6, G7, H8,
+    C1, C2, C4, C5, C6, C7, C8,
+    A3, B3, D3, E3, F3, G3, H3,
+    A5, B4, D2, E1
+  ]
+test3: 
+  piece_type: K
+  square: B2
+  expected_move_squares: [
+    C1, C2, C3,
+    B1, B3,
+    A1, A2, A3,
+  ]
+test4:
+  piece_type: P
+  square: E3
+  expected_move_squares: [
+    E4, E5
+  ]
+test5:
+  piece_type: R
+  square: F6
+  expected_move_squares: [
+    F1, F2, F3, F4, F5, F7, F8,
+    A6, B6, C6, D6, E6, G6, H6
+  ]
+test6:
+  piece_type: B
+  square: D7
+  expected_move_squares: [
+    C8, E6, F5, G4, H3, 
+    E8, C6, B5, A4, 
+  ]
+test7: 
+  piece_type: K
+  square: D8
+  expected_move_squares: [
+    C7, D7, E7,
+    C8, E8
+  ]

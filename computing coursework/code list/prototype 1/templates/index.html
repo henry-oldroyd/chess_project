@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- standard metadata to help browsers -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+
+    <!-- import javascript -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js" integrity="sha512-9mpsATI0KClwt+xVZfbcf2lJ8IFBAwsubJ6mI3rtULwyM3fBmQFzj0It4tGqxLOGQwGfJdk/G+fANnxfq9/cew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- load in the javascript from a url that the server will determine as the html is served -->
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+
+    <!-- import css styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- i used the center tag to make the CSS simpler -->
+    <center>
+        <h1>Tic Tac Toe</h1>
+        <h2>You go first:</h2>
+        <!-- this table will be the 3x3 board -->
+        <table id="board">
+        <tbody>
+            <tr>
+                <!-- each square has an ID so I can see which one is clicked -->
+                <td id="sq_11"></td>
+                <td id="sq_12"></td>
+                <td id="sq_13"></td>
+            </tr>
+            <tr>
+                <td id="sq_21"></td>
+                <td id="sq_22"></td>
+                <td id="sq_23"></td>
+            </tr>
+            <tr>
+                <td id="sq_31"></td>
+                <td id="sq_32"></td>
+                <td id="sq_33"></td>
+            </tr>
+        </tbody>
+        </table>
+
+        <!-- this is the button for resetting the game -->
+        <button id="reset_btn">Reset Game</button>
+    </center>
+
+
+</body>
+</html>

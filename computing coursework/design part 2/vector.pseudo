@@ -1,0 +1,75 @@
+FUNCTION sqrt(x):
+    RETURN x**(1/2)
+END FUNCTOIN
+
+FUNCTION square(x):
+    RETURN x**2
+END FUNCTOIN
+
+CLASS Vector():
+    // 2d vector has properties i and j
+    i: int
+    j: int
+
+    // code to allow for  +  -  and  *  operators to be used with vectors
+    FUNCTION add_vectors(self, other):
+        ASSERT isinstance(other, Vector), "both objects must be instances of the Vector class"
+        RETURN Vector(
+            i=self.i + other.i,
+            j=self.j + other.j
+        )
+    END FUNCTOIN
+
+    FUNCTION subtract_vectors(self, other):
+        ASSERT isinstance(other, Vector), "both objects must be instances of the Vector class"
+        RETURN Vector(
+            i=self.i - other.i,
+            j=self.j - other.j
+        )
+    END FUNCTOIN
+
+
+    FUNCTION multiply_vectors(self, multiplier: int | float):
+        RETURN Vector(
+            i=int(self.i * multiplier),
+            j=int(self.j * multiplier)
+        )
+    END FUNCTOIN
+
+    // check if a vector is in board
+    FUNCTION in_board(self):
+        // Assumes that the current represented vector is a position vector
+        // checks if it points to a square that isn't in the chess board
+        RETURN self.i in range(8) and self.j in range(8)
+    END FUNCTOIN
+
+    // alternative way to create instance, construct from chess square
+    @classmethod
+    FUNCTION construct_from_square(This_Class, to_sqr):
+        // Example from and to squares are A3 -> v(0, 2) and to B4 -> v(1, 3)
+        to_sqr = to_sqr.upper()
+        letter, number = to_sqr
+
+        // map letters and numbers to 0 to 7 and create new vector object
+        RETURN This_Class(
+            i=ord(letter.upper()) - ord("A"),
+            j=int(number)-1
+        )
+    END FUNCTOIN
+
+    // this function is the reverse and converts a position vector to a square
+    FUNCTION to_square(self) -> str:
+        letter = chr(self.i + ord("A"))
+        number = self.j+1
+        RETURN f"{letter}{number}"
+    END FUNCTOIN
+
+
+    FUNCTION magnitude_and_unit_vector(self):
+        magnitude: float = sqrt(square(self.i) + square(self.j))
+        // unit_vector: Vector = self.__mul__(1/magnitude)
+        // RETURN magnitude, unit_vector
+
+        RETURN magnitude
+    END FUNCTOIN
+END CLASS

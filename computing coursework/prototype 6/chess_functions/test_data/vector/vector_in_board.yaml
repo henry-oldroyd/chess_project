@@ -1,0 +1,47 @@
+test1:
+  vector: [0, 0]
+  expected: True
+  
+test2:
+  vector: [7, 0]
+  expected: True
+test3:
+  vector: [0, 7]
+  expected: True
+test4:
+  vector: [7, 7]
+  expected: True
+
+test5:
+  vector: [4, 6]
+  expected: True
+
+test6:
+  vector: [3, 2]
+  expected: True
+
+test7:
+  vector: [-1, -1]
+  expected: False
+
+test8:
+  vector: [-5, 4]
+  expected: False
+
+test9:
+  vector: [8, 7]
+  expected: False
+
+test10:
+  vector: [-4, 4]
+  expected: False
+
+test11:
+  vector: [10, 4]
+  expected: False
+
+# # adding comment inside causes logic error and false pass on test
+# # invalid delete me
+# test:
+#   vector: [4, 6]
+#   expected: False

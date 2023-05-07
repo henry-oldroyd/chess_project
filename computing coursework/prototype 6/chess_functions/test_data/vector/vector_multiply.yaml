@@ -1,0 +1,16 @@
+test1:
+  vector: [1, 1]
+  multiplier: 1
+  expected: [1, 1]
+test2:
+  vector: [1, 1]
+  multiplier: -1
+  expected: [-1, -1]
+test3:
+  vector: [1, 1]
+  multiplier: 5
+  expected: [5, 5]
+test4:
+  vector: [5, 0]
+  multiplier: 0
+  expected: [0, 0]

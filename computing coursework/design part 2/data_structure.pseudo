@@ -1,0 +1,32 @@
+previous_data_hashes = {
+    "pieces_taken": [None, (board) => get_hash_of_data(board.pieces_taken)],
+    "move_history": [None, (board) => get_hash_of_data(board.move_history)],
+    "piece_layout": [None, (board) => get_hash_of_data([board.pieces_matrix, board.possible_to_vectors, board.selected_from_vector])],
+    "highlighting": [None, (board) => get_hash_of_data([board.possible_to_vectors, board.selected_from_vector])],
+    "difficulty": [None, (board) => get_hash_of_data(board.difficulty, stringify=False)]
+};
+
+FUNCTION update_as_necessary(board, update_function, hashes_table_key) 
+    old_hash, compute_hash = previous_data_hashes[hashes_table_key];
+    let new_hash = compute_hash(board);
+
+    IF new_hash != old_hash THEN
+        // hashes are different, updating table
+        previous_data_hashes[hashes_table_key][0] = new_hash
+        update_function(board)
+    END IF
+    // ELSE hashes are the same so don't update
+
+END FUNCTION
+
+
+
+
+FUNCTION update_board_widget(board)
+    update_main_title(board);
+    update_as_necessary(board, add_pieces, "piece_layout")
+    update_as_necessary(board, add_highlighting, "highlighting")
+    update_as_necessary(board, set_selected_difficulty, "difficulty")
+    update_as_necessary(board, update_pieces_taken, "pieces_taken")
+    update_as_necessary(board, set_widget_move_history, "move_history")
+END FUNCTION

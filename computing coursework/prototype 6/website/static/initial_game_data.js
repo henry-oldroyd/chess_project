@@ -1,0 +1,8 @@
+let INITIAL_GAME_DATA = JSON.parse(
+    `
+        {"difficulty": "medium", "next_to_go": "W", "game_over_data": {"over": false, "winning_player": null, "victory_classification": null}, "legal_moves": [[[0, 1], [0, 1]], [[0, 1], [0, 2]], [[1, 0], [-1, 2]], [[1, 0], [1, 2]], [[1, 1], [0, 1]], [[1, 1], [0, 2]], [[2, 1], [0, 1]], [[2, 1], [0, 2]], [[3, 1], [0, 1]], [[3, 1], [0, 2]], [[4, 1], [0, 1]], [[4, 1], [0, 2]], [[5, 1], [0, 1]], [[5, 1], [0, 2]], [[6, 0], [-1, 2]], [[6, 0], [1, 2]], [[6, 1], [0, 1]], [[6, 1], [0, 2]], [[7, 1], [0, 1]], [[7, 1], [0, 2]]], "pieces_matrix": [[["B", "\u265c"], ["B", "\u265e"], ["B", "\u265d"], ["B", "\u265b"], ["B", "\u265a"], ["B", "\u265d"], ["B", "\u265e"], ["B", "\u265c"]], [["B", "\u265f\ufe0e"], ["B", "\u265f\ufe0e"], ["B", "\u265f\ufe0e"], ["B", "\u265f\ufe0e"], ["B", "\u265f\ufe0e"], ["B", "\u265f\ufe0e"], ["B", "\u265f\ufe0e"], ["B", "\u265f\ufe0e"]], [[null, null], [null, null], [null, null], [null, null], [null, null], [null, null], [null, null], [null, null]], [[null, null], [null, null], [null, null], [null, null], [null, null], [null, null], [null, null], [null, null]], [[null, null], [null, null], [null, null], [null, null], [null, null], [null, null], [null, null], [null, null]], [[null, null], [null, null], [null, null], [null, null], [null, null], [null, null], [null, null], [null, null]], [["W", "\u265f\ufe0e"], ["W", "\u265f\ufe0e"], ["W", "\u265f\ufe0e"], ["W", "\u265f\ufe0e"], ["W", "\u265f\ufe0e"], ["W", "\u265f\ufe0e"], ["W", "\u265f\ufe0e"], ["W", "\u265f\ufe0e"]], [["W", "\u265c"], ["W", "\u265e"], ["W", "\u265d"], ["W", "\u265b"], ["W", "\u265a"], ["W", "\u265d"], ["W", "\u265e"], ["W", "\u265c"]]], "check": false, "pieces_taken": {"B": [], "W": []}, "move_history": []}
+
+
+
+    `
+)

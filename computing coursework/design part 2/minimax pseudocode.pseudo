@@ -1,0 +1,59 @@
+// default arguments allow for the function to be provided only the board state and be able to find the computer move
+FUNCTION minimax_search(board_state: Board_State, depth: 2, alpha=-infinity, beta=+infinity, is_maximizer=False)
+
+    // base case
+    over, winner = board_state.is_game_over_for_next_to_go()
+    IF depth == 0 or over THEN
+		// use static_evaluation for score
+        best_score = board_state.static_evaluation()
+        best_move = None
+		
+        RETURN best_score, best_move
+    END IF
+
+    // recursive case
+	// set initial variables
+    best_move = None
+    IF is_maximizer:
+        best_score = - infinity
+    ELSE:
+        best_score = + infinity
+	END IF
+
+	// iterate through legal moves and get child board states
+	legal_moves = board_state.generate_legal_moves()
+    FOR EACH move in legal_moves
+		// get child board state
+        from_v, move_v = move
+        child_board_state = board_state.make_move(from_v, move_v)
+
+
+		// recursive call to evaluate child board state
+        child_score, child_move = minimax_search(child, depth - 1, alpha, beta, not is_maximizer)
+
+		// depending on if player is maximizer affect if a lower or higher score is better
+		// update alpha / beta and update best score and move variables as necessary
+        IF is_maximizer:
+            alpha = max(alpha, child_score)
+            IF child_score > best_score:
+                best_score = child_score
+                best_move = child_move
+			END IF
+        ELSE:
+            beta = min(beta, child_score)
+            IF child_score < best_score:
+                best_score = child_score
+                best_move = child_move
+			END IF
+		END IF
+
+        // pruning, stop exploring more legal moves
+        if beta <= alpha:
+            break
+	END FOR
+
+	// return the score and move corresponding to the best child
+    RETURN best_score, best_move
+
+END FUNCTION
+

@@ -1,0 +1,42 @@
+body {
+    background-color: lightgray;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+table{
+    /* width: 50vw;
+    height: 50vw; */
+    /* border: 3px solid black; */
+    /* table-layout: fixed; */
+    padding: 10px;
+    margin: 15px;
+    /* margin: auto; */
+}
+
+
+td{
+    border: 5px solid black;
+    /* overflow: hidden; */
+
+    /* laptop */
+    width: 21vh;
+    height: 21vh;
+
+    /* ipad air */
+    /* width: 24vw;
+    height: 24vw; */
+    font-size: 80px;
+    text-align: center
+}
+
+button{
+    margin-left: auto;
+    margin-right: auto;
+    width: 150;
+    height: 50px;
+    text-align: center;
+    /* background-color: blue; */
+}

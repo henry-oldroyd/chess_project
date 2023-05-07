@@ -1,0 +1,38 @@
+test1:
+  pieces_matrix: [
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [BP,   null, BP,   null, null, null, null, null],
+    [null, WP,   null, null, null, null, null, null]
+  ]
+  pieces_and_squares: [
+    [WP, B1],
+    [BP, A2],
+    [BP, C2]
+  ]
+
+test2:
+  pieces_matrix: [
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null],
+    [null, null, null, BP,   null, null, null, null],
+    [null, null, null, null, BR,   null, null, null],
+    [null, BR,   null, BR,   null, null, WB,   null],
+    [null, null, BP,   null, null, null, BP,   null],
+    [null, WR,   null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null]
+  ]
+  pieces_and_squares: [
+    [WR, B2],
+    [BR, B4],
+    [BP, C3],
+    [BR, D4],
+    [BP, D6],
+    [BP, G3],
+    [WB, G4],
+    [BR, E5]
+  ]
